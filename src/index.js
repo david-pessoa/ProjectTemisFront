@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Conversa from './Conversa';
+import MainScreen from './MainScreen';
 import Chat from './Chat'; 
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-    <Conversa/>,
+    <MainScreen/>,
     document.getElementById('root'));
 registerServiceWorker();
 

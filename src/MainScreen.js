@@ -3,9 +3,9 @@ import BemVindo from './BemVindo.js';
 import Input from './Input.js'
 import menu_hamburguer from './assets/Menu.png'
 import profile_photo from './assets/Profile_Photo.png'
-import Chat from './Chat'; 
+import Chat from './Chat.js'; 
 
-function Conversa(){
+function MainScreen(){
     const TopoStyle = {
         display: 'flex',
         alignItems: 'center',
@@ -60,4 +60,4 @@ function Conversa(){
     </body>
     );
 }
-export default Conversa;
+export default MainScreen;
