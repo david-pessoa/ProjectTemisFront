@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Login.css';
 
-class Login extends Component {
-  render() {
+class Login extends Component { //Componente de tela de Login, conforme protótipo no figma, porém não-funcional
+  render() { // A estilização está sendo feita em Login.css
     return (
       <div className="TelaLogin">
           <h1 className = "title">SamsAI</h1>

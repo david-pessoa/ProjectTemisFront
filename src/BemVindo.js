@@ -1,9 +1,9 @@
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-function BemVindo({ isVisible }) {
+function BemVindo({ isVisible }) { 
 
-  return (
+  return ( //Componente BemVindo some após o usuário enviar sua primeira mensagem
     <div>
       {isVisible && <Text/>}
     </div>
@@ -13,7 +13,7 @@ function BemVindo({ isVisible }) {
 export default BemVindo;
 
 function Text(){
-    const BoasVindas = {
+    const BoasVindas = { //Estiliza texto de boas vindas
         color: '#CE5967',
         fontSize: '75px',
         fontWeight: '800',
