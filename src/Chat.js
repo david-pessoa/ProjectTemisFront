@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BemVindo from './BemVindo.js';
 import LangflowClient from './LangflowClient';
 import './Chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
@@ -9,6 +10,8 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 function Chat() {
     const [typing, setTyping] = useState(false);
 
+    const [isVisible, setIsVisible] = useState(true);
+
     const [messages, setMessages] = useState([
         {
             message: "Olá! Testando...",
@@ -18,6 +21,7 @@ function Chat() {
     ])
 
     const handleSend = async (message) => {
+        setIsVisible(false);
         const newMessage = {
             message: message,
             user: "user",
@@ -100,14 +104,14 @@ function Chat() {
         bottom: '30px',
         border: 'none',
         backgroundColor: 'transparent',
-    }
-
+    }    
 
     //Precisa fixar o Input e estilizá-lo
+    // Colocar <BemVindo isVisible={isVisible}/> em algum lugar quando puder
     return (
         <div style = {containerStyle}>
             <MainContainer style={ChatStyle}>
-                <ChatContainer> 
+                <ChatContainer>
                     <MessageList
                     scrollBehavior= "smooth"
                     TypingIndicator = {typing ? <TypingIndicator content= "SamsAI está digitando..."/> : null}>

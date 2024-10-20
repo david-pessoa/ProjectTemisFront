@@ -30,23 +30,6 @@ function MainScreen(){
         justifyContent: 'center',
     } */
 
-        // Define um estado para controlar se o texto está visível ou não
-        const [isVisible, setIsVisible] = useState(true);
-
-        // Função para alternar a visibilidade do texto
-        const toggleText = () => {
-          setIsVisible(false); // Inverte o valor de isVisible
-        };
-
-        /*
-        <BemVindo isVisible={isVisible}/> //Objetivo é incluir a mensagem de Bem Vindo, mas deixa pra depois
-        
-        <div style = {InputStyle}>
-            <Input onToggleText={toggleText}/>
-        </div>
-        
-        */
-
     return(
     <body>
         <div style = {TopoStyle}>

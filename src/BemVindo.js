@@ -2,7 +2,6 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 function BemVindo({ isVisible }) { 
-
   return ( //Componente BemVindo some após o usuário enviar sua primeira mensagem
     <div>
       {isVisible && <Text/>}
@@ -17,8 +16,7 @@ function Text(){
         color: '#CE5967',
         fontSize: '75px',
         fontWeight: '800',
-        marginLeft: '30vh'
-
+        marginLeft: '30vh',
       };
 
     return(
