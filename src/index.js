@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import MainScreen from './MainScreen';
-import Chat from './Chat'; 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-    <MainScreen/>,
-    document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+    <MainScreen/>
+);
 registerServiceWorker();
 
 //Substituir depois Chat por Conversa

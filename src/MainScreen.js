@@ -31,7 +31,7 @@ function MainScreen(){
     } */
 
     return(
-    <body>
+    <div>
         <div style = {TopoStyle}>
             <img src={menu_hamburguer}/>
             <h1 style = {TitleStyle}>SamsAI</h1> 
@@ -40,7 +40,7 @@ function MainScreen(){
 
         <Chat/>
     
-    </body>
+    </div>
     );
 }
 export default MainScreen;

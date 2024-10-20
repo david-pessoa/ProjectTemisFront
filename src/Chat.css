@@ -4,8 +4,9 @@
     background-color: transparent;
 }
 
-.cs-message__content.cs-message__content{
+.cs-message--incoming .cs-message__content.cs-message__content{
     background-color: #DCDCDC;
+    border-radius: .7em .7em .7em .7em;
 }
 
 .cs-message--outgoing .cs-message__content.cs-message__content{
@@ -13,7 +14,7 @@
     border-radius: .7em .7em .7em .7em;
 }
 
-.cs-message__html-content{
+.cs-message--incoming .cs-message__html-content.cs-message__html-content{
     background-color: transparent;
     color: black;
     

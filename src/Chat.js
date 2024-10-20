@@ -5,18 +5,17 @@ import './Chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-//const API_KEY = "coloca a API do Langflow";
+//const API_KEY = "sk-Ws3XgDdqZxa-sIfoih_G9WQpjr8GisDfodDOTQwRaVT3BlbkFJRPoOWUIbR72UDhNYCcKAUK-nnPksadcxq018O9v3MA"; //SamsAI
+const API_KEY = "sk-URFSgdeBHnoqKDr-IqhREP1gL7MydtkQgY3Vp1Fd44T3BlbkFJFRMgJS_ZOXxi4X_ixfedYrz3QP3Z0vMAz2zf73L2sA"; //Teste2
 
 function Chat() {
-    const [typing, setTyping] = useState(false);
-
     const [isVisible, setIsVisible] = useState(true);
 
     const [messages, setMessages] = useState([
         {
             message: "Olá! Testando...",
-            user: "SamsAI",
-            direction: "ingoing",
+            user: "ChatGPT",
+            direction: "incoming",
         }
     ])
 
@@ -33,9 +32,6 @@ function Chat() {
         //Atualiza o status da mensagem
         setMessages(newMessages);
 
-        //Indicador de que a IA está respondendo
-        setTyping(true);
-
         //Processa a mensagem (envia e exibe a resposta)
         await processMessageToSamsAI(newMessages);
     }
@@ -46,7 +42,7 @@ function Chat() {
 
         let apiMessages = chatMessages.map((messageObject) => {
             let role = "";
-            if(messageObject.sender === "SamsAI") {
+            if(messageObject.sender === "ChatGPT") {
                 role = "assistant"
             }
             else
@@ -68,7 +64,7 @@ function Chat() {
                 ...apiMessages],
         }
 
-        await fetch("https://api.langflow.astra.datastax.com", {method: "POST", 
+        await fetch("https://api.openai.com/v1/chat/completions", {method: "POST", 
             headers: {
                 "Authorization": "Bearer " + API_KEY,
                 "Content-Type": "application/json"
@@ -78,14 +74,13 @@ function Chat() {
             return data.json();
         }).then((data) => {
             console.log(data)
-            console.log(data.choices) //E assim vai até achar o conteúdo
+            console.log(data.choices[0].message.content) //E assim vai até achar o conteúdo
             setMessages(
                 [...chatMessages, {
-                    message: data.choices, //Coloca onde estiver o conteúdo
-                    sender: "SamsAI",
+                    message: data.choices[0].message.content, //Coloca onde estiver o conteúdo
+                    sender: "ChatGPT",
                 }]
             )
-            setTyping(false);
         });
     }
 
@@ -113,8 +108,7 @@ function Chat() {
             <MainContainer style={ChatStyle}>
                 <ChatContainer>
                     <MessageList
-                    scrollBehavior= "smooth"
-                    TypingIndicator = {typing ? <TypingIndicator content= "SamsAI está digitando..."/> : null}>
+                    scrollBehavior= "smooth">
                         {messages.map((message, i) => {
                             return <Message key = {i} model = {message}/>
                         })}
