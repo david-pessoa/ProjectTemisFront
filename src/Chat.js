@@ -5,9 +5,6 @@ import './Chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-//const API_KEY = "sk-Ws3XgDdqZxa-sIfoih_G9WQpjr8GisDfodDOTQwRaVT3BlbkFJRPoOWUIbR72UDhNYCcKAUK-nnPksadcxq018O9v3MA"; //SamsAI
-const API_KEY = "sk-qA5UKrsytzH8A8NjBi3te-gKfljSacPpyyK4h_fC0AT3BlbkFJTYHUr4vFiGZzm_Jf_wbIE1AUYfjOXTzbnPk7pg1kgA"; //Teste2
-
 function Chat() {
     const [isVisible, setIsVisible] = useState(true);
 
