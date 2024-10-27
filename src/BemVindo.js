@@ -1,5 +1,4 @@
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 
 function BemVindo({ isVisible }) { 
   return ( //Componente BemVindo some após o usuário enviar sua primeira mensagem
@@ -26,5 +25,3 @@ function Text(){
         </div>
     );
 }
-
-registerServiceWorker();
