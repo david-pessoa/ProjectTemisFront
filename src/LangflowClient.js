@@ -1,4 +1,4 @@
-class LangflowClient {
+export default class LangflowClient {
     constructor(baseURL, applicationToken) {
         this.baseURL = baseURL;
         this.applicationToken = applicationToken;
