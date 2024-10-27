@@ -34,7 +34,7 @@ function MainScreen(){
     <div>
         <div style = {TopoStyle}>
             <img src={menu_hamburguer}/>
-            <h1 style = {TitleStyle}>SamsAII</h1> 
+            <h1 style = {TitleStyle}>SamsAI</h1> 
             <img src={profile_photo}/>
         </div>
 
