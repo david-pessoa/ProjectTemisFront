@@ -38,7 +38,7 @@ function Chat() {
         const outputType = 'chat';
         const stream = false;
         const applicationToken = 'AstraCS:eITJWgcxrHBmiMyuOBnJaQxw:f41642d1db696db910f69a8e3cc1753a69c51e2bcaa285f4e0e3805f2980dcc1';
-        const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com',
+        const langflowClient = new LangflowClient('http://localhost:3000/api',
             applicationToken);
         try{
             const tweaks = {
