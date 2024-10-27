@@ -7,7 +7,6 @@ export default class LangflowClient {
         headers["Authorization"] = `Bearer ${this.applicationToken}`;
         headers["Content-Type"] = "application/json";
         const url = `${this.baseURL}${endpoint}`;
-        
         try {
             const response = await fetch(url, {
                 method: 'POST',

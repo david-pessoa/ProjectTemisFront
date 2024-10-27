@@ -70,7 +70,6 @@ function Chat() {
                 (message) => console.log("Stream Closed:", message), // onClose
                 (error) => console.log("Stream Error:", error) // onError
             );
-            console.log("Response Body:", response);
 
             if (!stream && response && response.outputs) {
                 const flowOutputs = response.outputs[0];

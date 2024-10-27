@@ -17,7 +17,7 @@ app.use(cors({
 
 // Proxy para a API externa
 app.use('/api', createProxyMiddleware({
-    target: 'https://api.langflow.astra.datastax.com', // URL da API Langflow
+    target: 'https://api.langflow.astra.datastax.com/lf/efde00ae-4d32-4471-8e8d-26482560f5a9/api/v1/run/789d10ee-9573-4333-8fe2-52c048315d3d?stream=false', // URL da API Langflow
     changeOrigin: true,
     pathRewrite: { '^/api': '' } // Remove o prefixo '/api' das requisições
 }));
