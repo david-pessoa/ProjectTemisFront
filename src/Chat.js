@@ -37,8 +37,8 @@ function Chat() {
         const inputType = 'chat';
         const outputType = 'chat';
         const stream = false;
-        const applicationToken = 'AstraCS:eITJWgcxrHBmiMyuOBnJaQxw:f41642d1db696db910f69a8e3cc1753a69c51e2bcaa285f4e0e3805f2980dcc1';
-        const langflowClient = new LangflowClient('https://main.d21ve57798n4rc.amplifyapp.com/api',
+        const applicationToken = 'AstraCS:cmIozymSfZXOmNXmqhRrGqOG:4faab7c83271edcb542f3a2dd8f7291038b841bfd34225a09488223b30e5b8aa';
+        const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com/lf/8906cd75-1f84-48ee-a0cb-c87fefadf2d3/api/v1/run/495c887a-ad45-4831-b9c9-28f314b17197?stream=false',
             applicationToken);
         try{
             const tweaks = {

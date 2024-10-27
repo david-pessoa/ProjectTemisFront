@@ -3,16 +3,16 @@ export default class LangflowClient {
         this.baseURL = baseURL;
         this.applicationToken = applicationToken;
     }
-    async post(endpoint, body, headers = {"Content-Type": "application/json"}) {
-        headers["Authorization"] = `Bearer ${this.applicationToken}`;
-        headers["Content-Type"] = "application/json";
+    async post(endpoint, body, headers = {
+        "Authorization": `Bearer ${this.applicationToken}`,
+        "Content-Type": "application/json"
+    }) {
         const url = `${this.baseURL}${endpoint}`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify(body)
-                //mode: 'no-cors'
             });
 
             const responseMessage = await response.json();
