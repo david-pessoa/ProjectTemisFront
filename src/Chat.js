@@ -29,7 +29,7 @@ function Chat() {
         //await processMessageToSamsAI(newMessages);
         await getBotResponse(newMessages);
     }
-
+    //https://api.langflow.astra.datastax.com/lf/efde00ae-4d32-4471-8e8d-26482560f5a9/api/v1/run/789d10ee-9573-4333-8fe2-52c048315d3d?stream=false
     async function getBotResponse(userMessage) {
         const flowIdOrName = '789d10ee-9573-4333-8fe2-52c048315d3d';
         const langflowId = 'efde00ae-4d32-4471-8e8d-26482560f5a9';
@@ -37,8 +37,8 @@ function Chat() {
         const inputType = 'chat';
         const outputType = 'chat';
         const stream = false;
-        const applicationToken = 'AstraCS:cmIozymSfZXOmNXmqhRrGqOG:4faab7c83271edcb542f3a2dd8f7291038b841bfd34225a09488223b30e5b8aa';
-        const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com/lf/8906cd75-1f84-48ee-a0cb-c87fefadf2d3/api/v1/run/495c887a-ad45-4831-b9c9-28f314b17197?stream=false',
+        const applicationToken = API_KEY;
+        const langflowClient = new LangflowClient('https://api.langflow.astra.datastax.com',
             applicationToken);
         try{
             const tweaks = {
