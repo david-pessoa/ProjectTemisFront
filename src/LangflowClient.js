@@ -9,7 +9,7 @@ export default class LangflowClient {
     }) {
         const url = `${this.baseURL}${endpoint}`;
         try {
-            const response = await fetch("http://localhost:3000/api/rota", {
+            const response = await fetch("/api", {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify(body),
