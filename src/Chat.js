@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BemVindo from './BemVindo.js';
-import LangflowClient from './LangflowClient';
+import LangflowClient from './LangflowClient.js';
 import './Chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput } from '@chatscope/chat-ui-kit-react';
@@ -27,7 +27,7 @@ function Chat() {
 
         //Processa a mensagem (envia e exibe a resposta)
         //await processMessageToSamsAI(newMessages);
-        await getBotResponse(newMessages);
+        await getBotResponse(message);
     }
 
     async function getBotResponse(userMessage) {
