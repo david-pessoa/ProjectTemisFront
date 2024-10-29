@@ -22,6 +22,7 @@ Execute o comando `npm test` para verificar se os testes unitários declarados e
 
 ### Passo 3)
 Execute o comando `npm start` para inciar a aplicação no `localhost:3000`
+Abra um novo terminal e digite `node proxy/server.js` para ativar o proxy na porta 5500
 
 ## Arquivos
 ### index.js
@@ -36,11 +37,8 @@ Este é um CSS global, importado no `index.js`. Os valores que estão nos atribu
 ### Chat.js
 Para entender melhor o que foi escrito, recomendo assistir a este <a href = "https://www.youtube.com/watch?v=Lag9Pj_33hM">vídeo</a>. No vídeo é feita uma integração com a API do ChatGPT, embora em nosso caso ela será feita com o LangFlow. Para estilização novamente, apliquei ela dentro do componentes. Porém, como estou chamando outros componentes pela biblioteca `@chatscope/chat-ui-kit-react` para construir a interface do Chat, tive de sobrescrever o CSS de tags HTML internas destes componentes. Para isso, estou usando o arquivo `Chat.css`. Assim foi possível tirar os balões de fala das cores azul e branca e transformá-los em vinho e no tom de branco desejado como no protótipo.
 
-### Input.js
-Antes de ter ficado sabendo sobre a biblioteca para interface de chats mencionada anteriormente, eu fiz um componente para o input (contendo os botões de anexar arquivo, gravar áudio, enviar mensagem e um input para o usuário escrever a mensagem). Prefiro manter esse componente, caso a integração usando a biblioteca falhe
-
 ### LangflowClient.js
-O Cesar é quem sabe mas o chatGPT talvez ajude
+Este arquivo contém a classe `LangFlowClient` é usado para estabelecer uma conexão com o Front-end e o back-end (langflow). É aqui em que são enviadas requisições HTTP do tipo POST para o servidor.
 
 ### Login.js Login.css Login.test.js
 Esses arquivos são relacionados à tela de Login, então não precisamos nos preocupar com isso por enquanto, apenas mantém como está.
@@ -48,8 +46,8 @@ Esses arquivos são relacionados à tela de Login, então não precisamos nos pr
 ### Pasta assets
 Dentro desta pasta estão contidas todas as imagens que são usadas na aplicação. Se for necessário adicionar uma imagem, coloque-a aqui.
 
-### Pasta proxy
-O Cesar é quem sabe
+### Pasta proxy (server.js)
+Para evitar o erro do CORS, já que estamos fazendo uma requisição de um domínio diferente do langflow, foi necessário criar um proxy, que roda na porta 5500.
 
 ### Outros arquivos
 Os outros documentos não são relevantes, não é necessário alterá-los.
