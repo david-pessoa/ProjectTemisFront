@@ -1,11 +1,11 @@
-const { createProxyMiddleware } = require("http-proxy-middleware");
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 const PORT = process.env.PORT || 5500;
 
-app.use(cors({ origin: 'http://localhost:3000' })); // Especifique a origem permitida
+app.use(cors());
 
 app.use(
   '/api',
@@ -16,12 +16,26 @@ app.use(
     },
     secure: false,
     changeOrigin: true,
-    onProxyRes: (proxyRes) => {
-      proxyRes.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'; // Adiciona o cabeçalho CORS
+    onProxyReq: (proxyReq, req) => {
+      // Cabeçalhos permitidos explicitamente
+      const headersToKeep = {
+        "authorization": req.headers["authorization"],
+        "content-type": req.headers["content-type"]
+      };
+
+      // Remove todos os cabeçalhos do proxy
+      Object.keys(proxyReq.getHeaders()).forEach(header => proxyReq.removeHeader(header));
+
+      // Adiciona apenas os cabeçalhos especificados em headersToKeep
+      proxyReq.setHeader('Authorization', req.headers['authorization']);
+      proxyReq.setHeader('Content-Type', req.headers['content-type']);
+
+      // Log para confirmar quais cabeçalhos estão sendo enviados
+      console.log("Headers encaminhados:", proxyReq.getHeaders());
     },
   })
 );
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
