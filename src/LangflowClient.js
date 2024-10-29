@@ -1,15 +1,18 @@
 export default class LangflowClient {
-    constructor(baseURL, applicationToken) {
+    constructor(baseURL = 'http://localhost:5500/api', applicationToken = 'efde00ae-4d32-4471-8e8d-26482560f5a9') {
         this.baseURL = baseURL;
         this.applicationToken = applicationToken;
     }
-    async post(endpoint, body, headers = {
-        "Authorization": `Bearer ${this.applicationToken}`,
-        "Content-Type": "application/json"
-    }) {
+
+    async post(endpoint, body) {
         const url = `${this.baseURL}${endpoint}`;
+        const headers = {
+            "Authorization": `Bearer ${this.applicationToken}`,
+            "Content-Type": "application/json"
+        };
+
         try {
-            const response = await fetch("/api", {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify(body),
