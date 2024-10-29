@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import BemVindo from './BemVindo.js';
-import Input from './Input.js'
 import menu_hamburguer from './assets/Menu.png'
 import profile_photo from './assets/Profile_Photo.png'
 import Chat from './Chat.js'; 
