@@ -27,13 +27,13 @@ function Chat() {
 
         //Processa a mensagem (envia e exibe a resposta)
         //await processMessageToSamsAI(newMessages);
-        await getBotResponse(message);
+        await getBotResponse(message, newMessages);
     }
 
-    async function getBotResponse(userMessage) {
+    async function getBotResponse(userMessage, chatMessages) {
         const flowIdOrName = '789d10ee-9573-4333-8fe2-52c048315d3d';
         const langflowId = 'efde00ae-4d32-4471-8e8d-26482560f5a9';
-        const inputValue = userMessage.message;
+        const inputValue = userMessage;
         const inputType = 'chat';
         const outputType = 'chat';
         const stream = false;
@@ -72,13 +72,11 @@ function Chat() {
             );
 
             if (!stream && response && response.outputs) {
-                const flowOutputs = response.outputs[0];
-                const firstComponentOutputs = flowOutputs.outputs[0];
-                const output = firstComponentOutputs.outputs.message;
+                const answer = response.outputs[0].outputs[0].messages[0].message
                 
-                if (output && output.text) {
-                    setMessages([...messages, {
-                        message: output.text, // Adiciona o texto da mensagem de resposta
+                if (response) {
+                    setMessages([...chatMessages, {
+                        message: answer, // Adiciona o texto da mensagem de resposta
                         direction: "incoming",
                     }]);
                 } else {
