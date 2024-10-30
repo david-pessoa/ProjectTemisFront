@@ -96,15 +96,6 @@ function Chat() {
         }
     }
 
-    async function processMessageToSamsAI(chatMessages){
-            setMessages(
-                [...chatMessages, {
-                    message: "Olá, como vai?", //Coloca onde estiver o conteúdo
-                    direction: "incoming",
-                }]
-            )
-    }
-
     const containerStyle = {
         display: 'flex',
         justifyContent: 'center',
