@@ -9,13 +9,13 @@ export default function handler(req, res) {
         changeOrigin: true,
         secure: false,
         onProxyReq: (proxyReq, req) => {
-            // Filtra cabeçalhos desnecessários
-            const headersToKeep = ["Authorization", "Content-Type"];
-            headersToKeep.forEach(header => {
-                if (req.headers[header.toLowerCase()]) {
-                    proxyReq.setHeader(header, req.headers[header.toLowerCase()]);
-                }
-            });
+          proxyReq.setHeader('Authorization', `Bearer ${process.env.NEXT_PUBLIC_APPLICATION_TOKEN}`);
+        },
+        onProxyRes: (proxyRes, req, res) => {
+            // Define cabeçalhos de CORS na resposta do proxy
+            res.setHeader('Access-Control-Allow-Origin', '*');  // Permite qualquer origem
+            res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS'); // Métodos permitidos
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization'); // Cabeçalhos permitidos
         },
     });
 
