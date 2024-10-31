@@ -9,7 +9,7 @@ export default class LangflowClient {
     }) {
         const url = `${this.baseURL}${endpoint}`;
         try {
-            const response = await fetch("/api", {
+            const response = await fetch("https://project-temis-front.vercel.app/api", {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify(body),
