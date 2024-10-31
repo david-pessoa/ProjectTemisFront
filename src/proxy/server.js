@@ -16,7 +16,7 @@ export default function handler(req, res) {
             // Define cabeçalhos de CORS na resposta do proxy
             res.setHeader('Access-Control-Allow-Origin', '*');  // Permite qualquer origem
             res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS'); // Métodos permitidos
-            res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization'); // Cabeçalhos permitidos
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
         },
     });
 }
