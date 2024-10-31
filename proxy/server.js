@@ -17,7 +17,7 @@ app.use(
     secure: false,
     changeOrigin: true,
     onProxyReq: (proxyReq, req) => {
-      // Filtra cabeçalhos desnecessários s
+      // Filtra cabeçalhos desnecessários
       const headersToKeep = ["Authorization", "Content-Type"];
       headersToKeep.forEach(header => {
         if (req.headers[header.toLowerCase()]) {
