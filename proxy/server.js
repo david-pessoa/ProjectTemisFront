@@ -1,6 +1,6 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
     const proxy = createProxyMiddleware({
         target: 'https://api.langflow.astra.datastax.com',
         pathRewrite: {
@@ -19,5 +19,6 @@ export default function handler(req, res) {
             res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
         },
     });
+    
+    return proxy(req, res);
 }
-
