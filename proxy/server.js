@@ -13,12 +13,12 @@ export default async function handler(req, res) {
           proxyReq.setHeader('Content-Type', "application/json");
         },
         onProxyRes: (proxyRes, req, res) => {
-            // Define cabeçalhos de CORS na resposta do proxy
+            // Define cabeçalhos de CORS na resposta do prox
             res.setHeader('Access-Control-Allow-Origin', '*');  // Permite qualquer origem
             res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS'); // Métodos permitidos
             res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
         },
     });
-    
+
     return proxy(req, res);
 }
