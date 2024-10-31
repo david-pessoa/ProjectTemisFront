@@ -19,6 +19,5 @@ export default function handler(req, res) {
             res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization'); // Cabeçalhos permitidos
         },
     });
-
-    return proxy(req, res);
 }
+
