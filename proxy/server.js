@@ -4,7 +4,7 @@ export default function handler(req, res) {
     const proxy = createProxyMiddleware({
         target: 'https://api.langflow.astra.datastax.com',
         pathRewrite: {
-            '^/api': '',
+            '^https://project-temis-front.vercel.app/api': 'https://api.langflow.astra.datastax.com',
         },
         changeOrigin: true,
         secure: false,
