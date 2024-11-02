@@ -3,8 +3,7 @@
 * João Victor Dallapé Madeira
 * David Varão Lima Bentes Pessoa
 
-Link para o site da aplicação: https://main.d21ve57798n4rc.amplifyapp.com/  
-Link para o site estático: http://samsai.com.s3-website-us-east-1.amazonaws.com/
+Link para o site da aplicação: 52.45.15.19
 
 # Documentação
 
@@ -13,7 +12,7 @@ Link para o site estático: http://samsai.com.s3-website-us-east-1.amazonaws.com
 * node
 * Jest (para executar testes)
 
-## Como rodar a aplicação localmente
+## Como rodar a aplicação localmente*
 ### Passo 1)
 Execute o comando `npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event @chatscope/chat-ui-kit-react -D` para instalar as dependências e bibliotecas necessárias
 
@@ -23,6 +22,8 @@ Execute o comando `npm test` para verificar se os testes unitários declarados e
 ### Passo 3)
 Execute o comando `npm start` para inciar a aplicação no `localhost:3000`
 Abra um novo terminal e digite `node proxy/server.js` para ativar o proxy na porta 5500
+
+*OBS: obter o código da branch "código com status 200 (não se esquecer que rodei o node server/server.js" código: 046bcf6c203b42bfbfff7c61416c2017f7af8c7e) para rodar localmente
 
 ## Arquivos
 ### index.js
