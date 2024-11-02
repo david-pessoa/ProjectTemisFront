@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "proxy": "localhost:5500",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1",
@@ -12,8 +11,8 @@
     "react-scripts": "^5.0.1",
     "styled-components": "^6.1.13"
   },
-  "scripts": {
-    "start": "react-scripts start",
+  "scripts": {  
+    "start": "HOST=0.0.0.0 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
