@@ -3,7 +3,8 @@
 * João Victor Dallapé Madeira
 * David Varão Lima Bentes Pessoa
 
-Link para o site da aplicação: samsai.duckdns.org
+Links para o site da aplicação: samsai.duckdns.org e http://samsai.ddns.net/
+IP da instância: 52.45.15.19
 
 # Documentação
 
