@@ -26,7 +26,6 @@ function Chat() {
         setMessages(newMessages);
 
         //Processa a mensagem (envia e exibe a resposta)
-        //await processMessageToSamsAI(newMessages);
         await getBotResponse(message, newMessages);
     }
 
