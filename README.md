@@ -13,18 +13,16 @@ IP da instância: 52.45.15.19
 * node
 * Jest (para executar testes)
 
-## Como rodar a aplicação localmente*
+## Como rodar a aplicação localmente
 ### Passo 1)
 Execute o comando `npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event @chatscope/chat-ui-kit-react -D` para instalar as dependências e bibliotecas necessárias
 
-### Passo 2)
+### Passo 2) (Opcional)
 Execute o comando `npm test` para verificar se os testes unitários declarados em `Login.test.js` estão sendo executados corretamente
 
 ### Passo 3)
 Execute o comando `npm start` para inciar a aplicação no `localhost:3000`
 Abra um novo terminal e digite `node proxy/server.js` para ativar o proxy na porta 5500
-
-*OBS: obter o código da branch "código com status 200 (não se esquecer que rodei o node server/server.js" código: 046bcf6c203b42bfbfff7c61416c2017f7af8c7e) para rodar localmente
 
 ## Arquivos
 ### index.js
@@ -51,10 +49,7 @@ Dentro desta pasta estão contidas todas as imagens que são usadas na aplicaç�
 ### Pasta proxy (server.js)
 Para evitar o erro do CORS, já que estamos fazendo uma requisição de um domínio diferente do langflow, foi necessário criar um proxy, que roda na porta 5500.
 
-### Outros arquivos
-Os outros documentos não são relevantes, não é necessário alterá-los.
-
 ## Atualizando a página no servidor web da AWS
-Para atualizar o a página no servidor web com as alterações feitas no código, basta dar um commit com as alterações na branch `main` deste repositório
+Para atualizar a página na instância EC2 da AWS basta dar um commit no github.
 
 
