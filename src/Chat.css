@@ -29,7 +29,7 @@
 }
 
 .cs-message__html-content span{
-    background-color: transparent !important;
+    background-color: #722F37 !important;
     color: white !important;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .cs-message-input__content-editor span{
-    background-color: transparent !important;
+    background-color: #2F2F2F !important;
     color: white !important;
 }
 
