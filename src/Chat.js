@@ -3,16 +3,18 @@ import BemVindo from './BemVindo.js';
 import LangflowClient from './LangflowClient.js';
 import './Chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import { MainContainer, ChatContainer, MessageList, Message, MessageInput } from '@chatscope/chat-ui-kit-react';
+import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 const API_KEY = "AstraCS:eITJWgcxrHBmiMyuOBnJaQxw:f41642d1db696db910f69a8e3cc1753a69c51e2bcaa285f4e0e3805f2980dcc1";
 
 function Chat() {
+    const [typing, setTyping] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
-
     const [messages, setMessages] = useState([]) //Lista de mensagens vazia
+    const [isInputDisabled, setIsInputDisabled] = useState(false);
 
     const handleSend = async (message) => {
+        setIsInputDisabled(true); // Desativa o input após o envio
         setIsVisible(false);
         const newMessage = {
             message: message,
@@ -21,6 +23,7 @@ function Chat() {
         }
 
         const newMessages = [...messages, newMessage]; //Todas as mensagens antigas + a nova mensagem enviada
+        setTyping(true);
 
         //Atualiza o status da mensagem
         setMessages(newMessages);
@@ -82,6 +85,7 @@ function Chat() {
                     console.error("Mensagem de saída não encontrada.");
                 }
             }
+            setTyping(false);
             
         }
         catch (error) {
@@ -93,6 +97,7 @@ function Chat() {
                 }]
             )
         }
+        setIsInputDisabled(false); // Reativa o input após a resposta do bot
     }
 
     const containerStyle = {
@@ -119,12 +124,13 @@ function Chat() {
             <MainContainer style={ChatStyle}>
                 <ChatContainer>
                     <MessageList
-                    scrollBehavior= "smooth">
+                    scrollBehavior= "smooth"
+                    typingIndicator = {typing ? <TypingIndicator content= "Escrevendo mensagem..." /> : null}>
                         {messages.map((message, i) => {
                             return <Message key = {i} model = {message}/>
                         })}
                     </MessageList>
-                    <MessageInput placeholder='Escreva uma mensagem...' onSend={handleSend}/>
+                    <MessageInput placeholder='Escreva uma mensagem...' onSend={handleSend} disabled={isInputDisabled}/>
                 </ChatContainer>
             </MainContainer>
         </div>

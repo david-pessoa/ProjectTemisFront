@@ -1,4 +1,7 @@
 /* Remover a borda do container quando não tiver nada pra fazer...*/
+.cs-message{
+    margin-bottom: 10px;
+}
 
 .cs-chat-container.cs-chat-container{
     background-color: transparent;
@@ -25,6 +28,11 @@
     color: white;
 }
 
+.cs-message__html-content span{
+    background-color: transparent !important;
+    color: white !important;
+}
+
 .cs-chat-container .cs-message-input.cs-message-input {
     border: none;
     background-color: #2F2F2F;
@@ -38,6 +46,11 @@
 .cs-message-input__content-editor.cs-message-input__content-editor{
     background-color: transparent;
     color: white;
+}
+
+.cs-message-input__content-editor span{
+    background-color: transparent !important;
+    color: white !important;
 }
 
 .cs-message-input__content-editor-container.cs-message-input__content-editor-container{
@@ -55,5 +68,24 @@
 
 svg{
     background-color: transparent;
-    
+}
+
+.cs-message-input--disabled .cs-message-input__content-editor-wrapper{
+    background-color: transparent !important;
+}
+
+.cs-message-input--disabled .cs-message-input__content-editor[data-placeholder]:empty:before{
+    color: transparent !important;
+}
+
+.cs-typing-indicator.cs-typing-indicator{
+    background-color: transparent !important;
+}
+
+.cs-typing-indicator__text.cs-typing-indicator__text{
+    color: white; /*define cor do texto: "escrevendo resposta..."*/
+}
+
+.cs-typing-indicator__dot.cs-typing-indicator__dot{
+    background-color: white !important; /*define cor dos três pontinhos*/
 }
