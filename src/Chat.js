@@ -13,11 +13,18 @@ function Chat() {
     const [messages, setMessages] = useState([]) //Lista de mensagens vazia
     const [isInputDisabled, setIsInputDisabled] = useState(false);
 
+    const stripHtml = (html) => {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        return tempDiv.textContent || tempDiv.innerText || '';
+    };
+
     const handleSend = async (message) => {
+        const cleanMessage = stripHtml(message);
         setIsInputDisabled(true); // Desativa o input após o envio
         setIsVisible(false);
         const newMessage = {
-            message: message,
+            message: cleanMessage,
             user: "user",
             direction: "outgoing",
         }
@@ -29,7 +36,7 @@ function Chat() {
         setMessages(newMessages);
 
         //Processa a mensagem (envia e exibe a resposta)
-        await getBotResponse(message, newMessages);
+        await getBotResponse(cleanMessage, newMessages);
     }
 
     async function getBotResponse(userMessage, chatMessages) {
