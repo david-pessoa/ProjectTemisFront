@@ -3,7 +3,6 @@
 * João Victor Dallapé Madeira
 * David Varão Lima Bentes Pessoa
 
-Links para o site da aplicação: samsai.duckdns.org e http://samsai.ddns.net/
 IP da instância: 52.45.15.19
 
 # Documentação
@@ -15,7 +14,7 @@ IP da instância: 52.45.15.19
 
 ## Como rodar a aplicação localmente
 ### Passo 1)
-Execute o comando `npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event @chatscope/chat-ui-kit-react -D` para instalar as dependências e bibliotecas necessárias
+Execute o comando `npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event @chatscope/chat-ui-kit-react -D cors express` para instalar as dependências e bibliotecas necessárias
 
 ### Passo 2) (Opcional)
 Execute o comando `npm test` para verificar se os testes unitários declarados em `Login.test.js` estão sendo executados corretamente
