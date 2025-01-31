@@ -4,8 +4,6 @@
 * João Victor Dallapé Madeira
 * David Varão Lima Bentes Pessoa
 
-IP da instância: 52.45.15.19
-
 # Documentação
 
 ### Pré requisitos para rodar a aplicação localmente
